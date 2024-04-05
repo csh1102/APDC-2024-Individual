@@ -1,15 +1,15 @@
 package pt.unl.fct.di.apdc.firstwebapp.util;
-
-public class UserData {
+import com.google.cloud.datastore.*;
+public class LoginData {
 	
 	public String username;
 	public String password;
 	
-	public UserData() {
+	public LoginData() {
 		
 	}
 	
-	public UserData(String username, String password) {
+	public LoginData(String username, String password) {
 		this.username = username;
 		this.password = password;
 	}
