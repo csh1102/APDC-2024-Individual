@@ -6,25 +6,83 @@
   </head>
 
   <body>
-    <h1>Welcome to my simple web application!</h1>
+    <h1>Welcome to my ADCP-INDIVIDUAL</h1>
 
     <table>
       <tr>
-        <td colspan="2" style="font-weight:bold;">Available Services:</td>        
+        <td colspan="2" style="font-weight:bold;"></td>
       </tr>
-      <tr>
-        <td><a href='/rest/utils/hello'>Say Hello!</a></td><td>(greetings)</td>
-      </tr>
-      <tr>
-        <td><a href='/rest/utils/time'>What time is it?</a></td><td>(see server time)</td>
-      </tr>
-<p><a href='loginPage.html'>loginpage</a>
-      <p><a href="OperationPage.html">OperationPage</a>
-      <p><a href="home.html">home</a>
-      <p><a href = "registPage.html">register</a></p>
+      <p id="msg"></p>
+      <p id="log"><a href='loginPage.html'>loginpage</a>
+      <p id="homepage"><a href="home.html">homePage</a> </p>
+      <p id="logged"><a href="OperationPage.html">OperationPage</a></p>
+      <p id="reg"><a href = "registPage.html">register</a></p>
+      <button id="logout" hidden>Logout</button>
     </table>
   </body>
   <footer>
+    <script>
+      document.getElementById("logout").addEventListener("click", function (event) {
+        event.preventDefault();
+        var formData = {
+          operation: 10,
+          input: {},
+          token: JSON.parse(localStorage.getItem("token")),
+          output: 200
+        };
+        fetch("/rest/ops/logout", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formData)
+        })
+                .then(response => {
+                  if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                  }
+                  console.log("Logout with success:");
+                  alert("Success, will back to login in 3 seconds")
+                  setTimeout(function () {
+                    localStorage.removeItem("token");
+                    localStorage.removeItem("role");
+                    window.location.href = "index.html";
+                  }, 1000);
+                  return response.json();
+                })
+                .then(data => {
+                })
+                .catch(error => {
+                  if (error.status === 401) {
+                    alert("Authentication failed, will back to index in 3 seconds")
+                    setTimeout(function () {
+                      localStorage.removeItem("token");
+                      localStorage.removeItem("role");
+                      window.location.href = "index.html";
+                    }, 1000);
+                  }
+                });
+      });
+      window.onload = function f(){
+      console.log(localStorage.getItem('token'))
+      var AuthToken = JSON.parse(localStorage.getItem("token"));
+      if(AuthToken != null) {
+        var date = new Date(AuthToken.expirationDate);
+        if (date > Date.now()) {
+          document.getElementById("msg").innerText = "You are logged in."
+          document.getElementById("log").hidden = true;
+          document.getElementById("logout").hidden = false;
+        } else {
+          localStorage.clear();
+          document.getElementById("msg").innerText = "You are not logged in."
+          document.getElementById("logged").hidden = true;
+        }
+      }else {
+        localStorage.clear();
+        document.getElementById("msg").innerText = "You are not logged in."
+        document.getElementById("logged").hidden = true;
+      }
+    }</script>
   	Copyright: FCT NOVA 2023
   </footer>
 </html>

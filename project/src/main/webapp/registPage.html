@@ -30,8 +30,6 @@
         <input type="text" id="workplace" name="workplace" value="">
     <p><label for="privacy">privacy :</label>
         <input type="checkbox" id="privacy" name="privacy">
-        <label for="state">state :</label>
-        <input type="checkbox" id="state" name="state">
     <p><input type="submit" value="Register" />
     <p><button id="back">back</button></p>
 </form>
@@ -59,7 +57,6 @@
             job: document.getElementById("job").value,
             workplace: document.getElementById("workplace").value,
             privacy: document.getElementById("privacy").checked,
-            state: document.getElementById("state").checked
         }
         fetch("/rest/ops/register", {
             method: "POST",
@@ -77,7 +74,7 @@
                 console.log("Registration successful:", data);
                 alert("Success, will back to home in 3 seconds")
                 setTimeout(function () {
-                    window.location.href = "Operation.html";
+                    window.location.href = "index.html";
                 }, 3000);
             })
             .catch(error => {

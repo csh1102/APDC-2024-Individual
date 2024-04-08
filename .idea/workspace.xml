@@ -10,43 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc9d1063-1dc4-4ca0-bd35-3c3669c01b48" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Firstwebapp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_appengine_appengine_api_1_0_sdk_Release.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/Firstwebapp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/ChangePasswordData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/RequestData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/RequestDataUpdate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/RequestUpdate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/ResponseFormat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/UserLeveL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/qqcoisa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/AuthTokenDetail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/OperationPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/changePassword.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/loginPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/registPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/searchUser.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/updateOtherPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/updateSelfPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/project/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/LoginResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/LoginResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/OperationResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/Operation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/AuthToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/AuthToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/LoginData.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/LoginData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/RegisterData.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/RegisterData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/qqcois.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/ChangeOtherRole.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/changeOtherStatus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/Operation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/AuthTokenDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/AuthTokenDetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/OperationPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/OperationPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/changePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/changePassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/loginPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/registPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/registPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/searchUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/searchUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/updateOtherPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/updateOtherPage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +33,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="56363" />
+    <option name="totalTimeSeconds" value="86949" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -92,13 +71,17 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "com.google.cloudcode.ide_session_index": "20240408_0001",
-    "last_opened_file_path": "C:/Users/csh79/Documents/GitHub/APDC-2024-Individual/project/src/main/webapp",
+    "com.google.cloudcode.ide_session_index": "20240408_0003",
+    "last_opened_file_path": "C:/Users/csh79/Documents/GitHub/APDC-2024-Individual/project",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="pt.unl.fct.di.apdc.firstwebapp.resources" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\csh79\Documents\GitHub\APDC-2024-Individual\project" />
       <recent name="C:\Users\csh79\Documents\GitHub\APDC-2024-Individual\project\src\main\webapp" />
     </key>
   </component>
@@ -257,7 +240,8 @@
       <workItem from="1712409094699" duration="19492000" />
       <workItem from="1712493392514" duration="5202000" />
       <workItem from="1712503291556" duration="21404000" />
-      <workItem from="1712568818568" duration="18167000" />
+      <workItem from="1712568818568" duration="32827000" />
+      <workItem from="1712612802898" duration="3899000" />
     </task>
     <servers />
   </component>
@@ -280,7 +264,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/Operation.java</url>
-          <line>198</line>
+          <line>241</line>
           <properties class="pt.unl.fct.di.apdc.firstwebapp.resources.Operation" method="doRegistrationV1">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -289,7 +273,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/Operation.java</url>
-          <line>91</line>
+          <line>132</line>
           <properties class="pt.unl.fct.di.apdc.firstwebapp.resources.Operation" method="doLogout">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -298,7 +282,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/Operation.java</url>
-          <line>163</line>
+          <line>206</line>
           <properties class="pt.unl.fct.di.apdc.firstwebapp.resources.Operation" method="doSelfUpdate">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -312,7 +296,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/Operation.java</url>
-          <line>133</line>
+          <line>176</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>

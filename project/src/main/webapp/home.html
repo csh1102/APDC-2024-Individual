@@ -5,6 +5,37 @@
     <title>Title</title>
 </head>
 <body>
-
+<h1>Home Page</h1>
+<h3 id="head"></h3>
+<p id="msg"></p>
+<button id="operationPage" onclick=goTo()>GoToOperations</button>
 </body>
+<script>
+    function goTo(){
+        window.location.href = "OperationPage.html";
+    }
+    window.onload = function() {
+        var head = document.getElementById("head");
+        var msg = document.getElementById("msg");
+        var token = localStorage.getItem("token");
+        // head.innerHTML = "Hello " + token.name;
+        msg.innerText = f(token === null ? "0" : token.role);
+        function f(i){
+            if(i === 1){
+                return "You are User, u can search other user's and modify your personal data or delete your account.";
+            }
+            if (i===2){
+                return "You are GBO, u can search other user's data and modify their data.";
+            }
+            if (i===3){
+                return "You are GA, u can search other user's and GBO's data and modify their data.";
+            }
+            if(i ===4)
+                return "You are SU, u can do anything."
+            else {
+                return "GETOUTTTTTTTT"
+            }
+        }
+    }
+</script>
 </html>

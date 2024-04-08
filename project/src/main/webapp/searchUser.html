@@ -13,9 +13,9 @@
         <button id="back">back</button>
     </p>
 </form>
-<div id="ListUserTable">
+<table id="ListUserTable">
 
-</div>
+</table>
 </body>
 <script>
     document.getElementById("back").addEventListener("click", function (e) {
@@ -37,7 +37,6 @@
             },
             body: JSON.stringify(formData)
         }).then(response => {
-            console.log(response.json())
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
@@ -52,6 +51,7 @@
                     tdUsername.innerText = user.username;
                     tdName.innerText = user.name;
                     tdEmail.innerText = user.email;
+                    document.getElementById("ListUserTable").appendChild(tr);
                     tr.appendChild(tdUsername);
                     tr.appendChild(tdName);
                     tr.appendChild(tdEmail);

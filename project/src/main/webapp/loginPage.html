@@ -10,25 +10,37 @@
     <h1>LoginPage</h1>
 
     <p><label for="userName">UserName:</label>
-        <input type="text" id="userName" name="userName" value="" />
+        <input type="text" id="userName" name="userName" value=""/>
     <p><label for="password">Password:</label>
-        <input type="password" id="password" name="password" value="" />
-    <p><input type="submit" value="Login" />
-    <p><button id="back">back</button></p>
+        <input type="password" id="password" name="password" value=""/>
+    <p><input type="submit" value="Login"/>
+    <p>
+        <button id="back">back</button>
+    </p>
 </form>
 <div id="errorMessage" style="color: red; margin-top: 10px; position: absolute; top: 80%; left: 40%"></div>
 </body>
 
 <script>
-    document.getElementById("back").addEventListener("click", function(e){
+    window.onload = function f() {
+        var AuthToken = JSON.parse(localStorage.getItem("token"));
+        if (AuthToken == null) {
+            return;
+        }
+        if (AuthToken.expirationDate < Date.now()) {
+            alert("Already logged in");
+            window.location.href = "index.html";
+        }
+    }
+    document.getElementById("back").addEventListener("click", function (e) {
         window.location.href = "index.html";
     })
-    document.getElementById("loginForm").addEventListener("submit", function(event) {
+    document.getElementById("loginForm").addEventListener("submit", function (event) {
         event.preventDefault();
-        if(document.getElementById("userName").value.trim() === ""
-            &&document.getElementById("password").trim() === ""){
+        if (document.getElementById("userName").value.trim() === ""
+            && document.getElementById("password").trim() === "") {
             alert("Empty password or Username");
-            return ;
+            return;
         }
         var formData = {
             username: document.getElementById("userName").value,
@@ -43,6 +55,10 @@
         })
             .then(response => {
                 if (!response.ok) {
+                    if (response.status === 403) {
+                        alert("Your account is not active, please contact the administrator")
+                        window.refresh();
+                    }
                     throw new Error("Network response was not ok");
                 }
                 return response.json();
@@ -57,13 +73,11 @@
                 }, 1000);
             })
             .catch(error => {
-                if(error.code === 403)
-                    if(error.message === "Account Inactive") {
-                        alert("Your account is not active, please contact the administrator")
-                        window.refresh();
-                    }
-                    else
-                console.error("Error during login:", error);
+                if (error.code === 403) {
+                    alert("Your account is not active, please contact the administrator")
+                    window.refresh();
+                } else
+                    console.error("Error during login:", error);
             });
     });
 </script>

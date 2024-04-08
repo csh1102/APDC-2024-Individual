@@ -25,10 +25,51 @@ public class Operation {
     public Operation() {
     }
     @POST
-    @Path("/changeState")
+    @Path("/status")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response changeState(RequestData data) {
-
+    public Response changeStatus(qqcois data) {
+        if (data.token.expirationDate < System.currentTimeMillis()) {
+            return Response.status(Response.Status.UNAUTHORIZED).entity("Token expired.").build();
+        }
+        qqcois.struct input = data.input;
+        AuthToken token = data.token;
+        long role = token.role;
+        LOG.fine("Attempt to list users");
+        Key key = datastore.newKeyFactory().setKind("User").newKey(input.username);
+        Entity user = datastore.get(key);//be changed
+        if(user == null){
+            return Response.status(Response.Status.NOT_FOUND).entity("User does not exist.").build();
+        }
+        if(role == 4 ||user.getLong("user_level") < role){
+            user = Entity.newBuilder(user).set("user_state",input.status).build();
+            datastore.update(user);
+            return Response.ok(g.toJson(user)).build();
+        }else {
+            return Response.status(Response.Status.FORBIDDEN).entity("You are not allowed to change this user's status.").build();
+        }
+    }
+    @POST
+    @Path("/role")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response changeRole(qqcois data) {
+        if (data.token.expirationDate < System.currentTimeMillis()) {
+            return Response.status(Response.Status.UNAUTHORIZED).entity("Token expired.").build();
+        }
+        qqcois.struct input = data.input;
+        AuthToken token = data.token;
+        long role = token.role;
+        Key key = datastore.newKeyFactory().setKind("User").newKey(input.username);
+        Entity user = datastore.get(key);//be changed
+        if(user == null){
+            return Response.status(Response.Status.NOT_FOUND).entity("User does not exist.").build();
+        }
+        if(role == 4 ||(role == 3 && user.getLong("user_level") < 3)){
+            user = Entity.newBuilder(user).set("user_level",input.role).build();
+            datastore.update(user);
+            return Response.ok().build();
+        }else {
+            return Response.status(Response.Status.FORBIDDEN).entity("You are not allowed to change this user's status.").build();
+        }
     }
     @POST
     @Path("/List")
@@ -111,6 +152,9 @@ public class Operation {
             long rrole = rsdata.token.role;
             Key userKey = datastore.newKeyFactory().setKind("User").newKey(rsdata.input);
             Entity user = datastore.get(userKey);
+            if(user == null){
+                return Response.status(Response.Status.NOT_FOUND).entity("User does not exist.").build();
+            }
             long role = user.getLong("user_level");
             if(userKey.getName().equals(rsdata.token.name)||(rrole == 3 && role < 3) || rrole == 4){
                 txn.delete(userKey);
@@ -120,7 +164,6 @@ public class Operation {
             }else {
                 return Response.status(Response.Status.FORBIDDEN).entity("You are not allowed to delete this user.").build();
             }
-
         } finally {
             if (txn.isActive()) {
                 txn.rollback();
@@ -163,7 +206,7 @@ public class Operation {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response doSelfUpdate(RequestDataUpdate rsdata) {
         RequestUpdate data = rsdata.input;
-//        if(datastore.get(datastore.newKeyFactory().setKind("Aut").newKey(rsdata.token.tokenID))!=null)
+//        if(datastore.get(datastore.newKeyFactory().setKind("AuthToken").newKey(rsdata.token.tokenID))!=null)
 //            return Response.status(Response.Status.BAD_REQUEST).entity("AuthToken invalid.").build();
         LOG.fine("Attempt to update user: " + rsdata.token.name);
         if (rsdata.token.expirationDate < System.currentTimeMillis()) {
@@ -215,7 +258,7 @@ public class Operation {
                         .set("user_nif", data.nif)
                         .set("user_postcode", data.postcode)
                         .set("user_privacy", data.privacy)
-                        .set("user_state", data.state)
+                        .set("user_state", false)
                         .set("user_telephone", data.telephone)
                         .set("user_workplace", data.workplace)
                         .set("user_creation_time", Timestamp.now())

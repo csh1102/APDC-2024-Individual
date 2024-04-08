@@ -5,6 +5,8 @@
     <title>Title</title>
 </head>
 <body>
+<h1>Delete Page</h1>
+<p>Enter the user that you want to delete</p>
 <form id="UserName" action="/rest/ops/delete">
     <p><input type="text" id = "user"></p>
     <p><input type="submit" value="Confirm">
@@ -12,6 +14,16 @@
 </form>
 </body>
 <script>
+    window.onload = function f(){
+        var AuthToken = JSON.parse(localStorage.getItem("token"));
+        if(AuthToken == null){
+            window.location.href = "index.html";
+        }
+        if(AuthToken.expirationDate < Date.now()){
+            alert("AuthToken expired");
+            window.location.href = "index.html";
+        }
+    }
     document.getElementById("back").addEventListener("click", function (e) {
         e.preventDefault();
         window.location.href = "OperationPage.html";
@@ -36,21 +48,72 @@
             body: JSON.stringify(formData)
         }).then(response => {
             if (!response.ok) {
+                if(response.status === 404){
+                    alert("User not found");
+                }
+                if(response.status === 403){
+                    alert("You are not allowed to");
+                }
+                if(response.status === 401){
+                    alert("Authentication failed, will back to loginPage in 3 seconds")
+                    setTimeout(function () {
+                        window.location.href = "loginPage.html";
+                    }, 1000);
+                }
                 throw new Error("Network response was not ok");
             }
-            return response.json();
-        }).then(data =>{
-            console.log("Delete with success:", data);
+            if(document.getElementById("user").value === localStorage.getItem("token").name){
+                alert("You have delete yourself, will redirect back to index");
+                var formData = {
+                    operation: 10,
+                    input: {},
+                    token: JSON.parse(localStorage.getItem("token")),
+                    output: 200
+                };
+                fetch("/rest/ops/logout", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formData)
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            if(response.status === 404) {
+                                alert("User not found");
+                            }
+                            if(response.status === 403){
+                                alert("You are not allowed to");
+                                return;
+                            }
+                            if (response.status === 401) {
+                                alert("Authentication failed, will back to index in 3 seconds")
+                                setTimeout(function () {
+                                    localStorage.removeItem("token");
+                                    localStorage.removeItem("role");
+                                    window.location.href = "index.html";
+                                }, 1000);
+                            }
+                            throw new Error("Network response was not ok");
+                        }
+                        console.log("Logout with success:");
+                        alert("Success, will back to login in 3 seconds")
+                        setTimeout(function () {
+                            localStorage.removeItem("token");
+                            localStorage.removeItem("role");
+                            window.location.href = "index.html";
+                        }, 1000);
+                        return response.json();
+                    });
+                setTimeout(function () {
+                    window.location.href = "index.html";
+                },1000);
+                return;
+            }
             alert("Success, will back to home in 3 seconds")
             setTimeout(function () {
                 window.location.href = "OperationPage.html";
             }, 1000);
-        }).then(error =>{
-            if (error.code === 403) {
-                alert("You are not allowed to");
-            } else if (error.code === 401) {
-                alert("Authentication failed, will back to loginPage in 3 seconds")
-            }
         })
     });
 </script>

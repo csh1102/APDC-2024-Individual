@@ -9,45 +9,60 @@
 <table>
     <tr>Here is the Operation List that you can use to change something
 
-        <!--    ok--><p>OP1: <a href="registPage.html">Register a new account</a>
+        <!--    ok--><p id="O1">OP1: <a href="registPage.html">Register a new account</a>
 
-        <p>OP2: <a href="asdkjak">ChangeUserRole</a>
+        <p id="O2">OP2: <a href="ChangeOtherRole.html">ChangeUserRole</a>
 
-
-        <p>OP3: <a href="asdkjak">ChangeUserState</a>
             <!--    ok-->
+        <p id="O3">OP3: <a href="changeOtherStatus.html">ChangeUserState</a>
 
-        <p>OP4: <a href="delete.html">DeleteUser</a>
+            <!--    ok-->
+        <p id="O4">OP4: <a href="delete.html">DeleteUser</a>
 
-
-        <p>OP5: <a href="searchUser.html">ShowUserDetail</a>
+            <!--    ok-->
+        <p id = "O5">OP5: <a href="searchUser.html">ShowUserDetail</a>
 
             <!--    ok-->
         <p id="User">OP6: <a href="updateSelfPage.html">ModifyUserDetail</a>
 
-        <p id="Manager">OP6: <a href="updateOtherPage.html">Modify Other User Detail</a>
+
+        <p id="Manager">OP6: <a href="updateOtherPage.html">Modify Other User Detail/notFinished</a>
 
             <!--    ok-->
-        <p>OP7: <a href="changePassword.html">ModifyUserPassword</a>
+        <p id="O7">OP7: <a href="changePassword.html">ModifyUserPassword</a>
 
             <!--    ok-->
-        <p>OP8: <a href="loginPage.html">Login</a>
+        <p id="O8">OP8: <a href="loginPage.html">Login</a>
 
             <!--    ok-->
-        <p>OP9: <a href="AuthTokenDetail.html">AuthTokenDetail</a>
+        <p id="O9">OP9: <a href="AuthTokenDetail.html">AuthTokenDetail</a>
 
             <!--    ok-->
-        <p>OP10:
+        <p id="O10">OP10:
             <button id="logout">Logout</button>
     </tr>
 </table>
 </body>
 <script type="text/javascript">
+
+    window.onload = function f(){
+        var AuthToken = JSON.parse(localStorage.getItem("token"));
+        if(AuthToken == null){
+            window.location.href = "index.html";
+        }
+        if(AuthToken.expirationDate < Date.now()){
+            alert("AuthToken expired");
+            window.location.href = "index.html";
+        }
+    }
     if (parseInt(localStorage.getItem("role")) > 1) {
         document.getElementById("User").hidden = true;
-    } else {
+    } else if(parseInt(localStorage.getItem("role")) == 1){
+        document.getElementById("O2").hidden = true;
+        document.getElementById("O3").hidden = true;
         document.getElementById("Manager").hidden = true;
     }
+
     document.getElementById("logout").addEventListener("click", function (event) {
         event.preventDefault();
         var formData = {
@@ -65,6 +80,14 @@
         })
             .then(response => {
                 if (!response.ok) {
+                    if (response.status === 401) {
+                        alert("Authentication failed, will back to index in 3 seconds")
+                        setTimeout(function () {
+                            localStorage.removeItem("token");
+                            localStorage.removeItem("role");
+                            window.location.href = "loginPage.html";
+                        }, 1000);
+                    }
                     throw new Error("Network response was not ok");
                 }
                 console.log("Logout with success:");
@@ -72,21 +95,9 @@
                 setTimeout(function () {
                     localStorage.removeItem("token");
                     localStorage.removeItem("role");
-                    window.location.href = "loginPage.html";
-                }, 3000);
+                    window.location.href = "index.html";
+                }, 1000);
                 return response.json();
-            })
-            .then(data => {
-            })
-            .catch(error => {
-                if (error.status === 401) {
-                    alert("Authentication failed, will back to loginPage in 3 seconds")
-                    setTimeout(function () {
-                        localStorage.removeItem("token");
-                        localStorage.removeItem("role");
-                        window.location.href = "loginPage.html";
-                    }, 3000);
-                }
             });
     });
 </script>
