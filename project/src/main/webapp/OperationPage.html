@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opration</title>
+</head>
+<body>
+<h1>Operation Page </h1>
+<table>
+    <tr>Here is the Operation List that you can use to change something
+
+        <!--    ok--><p>OP1: <a href="registPage.html">Register a new account</a>
+
+        <p>OP2: <a href="asdkjak">ChangeUserRole</a>
+
+
+        <p>OP3: <a href="asdkjak">ChangeUserState</a>
+            <!--    ok-->
+
+        <p>OP4: <a href="delete.html">DeleteUser</a>
+
+
+        <p>OP5: <a href="searchUser.html">ShowUserDetail</a>
+
+            <!--    ok-->
+        <p id="User">OP6: <a href="updateSelfPage.html">ModifyUserDetail</a>
+
+        <p id="Manager">OP6: <a href="updateOtherPage.html">Modify Other User Detail</a>
+
+            <!--    ok-->
+        <p>OP7: <a href="changePassword.html">ModifyUserPassword</a>
+
+            <!--    ok-->
+        <p>OP8: <a href="loginPage.html">Login</a>
+
+            <!--    ok-->
+        <p>OP9: <a href="AuthTokenDetail.html">AuthTokenDetail</a>
+
+            <!--    ok-->
+        <p>OP10:
+            <button id="logout">Logout</button>
+    </tr>
+</table>
+</body>
+<script type="text/javascript">
+    if (parseInt(localStorage.getItem("role")) > 1) {
+        document.getElementById("User").hidden = true;
+    } else {
+        document.getElementById("Manager").hidden = true;
+    }
+    document.getElementById("logout").addEventListener("click", function (event) {
+        event.preventDefault();
+        var formData = {
+            operation: 10,
+            input: {},
+            token: JSON.parse(localStorage.getItem("token")),
+            output: 200
+        };
+        fetch("/rest/ops/logout", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                console.log("Logout with success:");
+                alert("Success, will back to login in 3 seconds")
+                setTimeout(function () {
+                    localStorage.removeItem("token");
+                    localStorage.removeItem("role");
+                    window.location.href = "loginPage.html";
+                }, 3000);
+                return response.json();
+            })
+            .then(data => {
+            })
+            .catch(error => {
+                if (error.status === 401) {
+                    alert("Authentication failed, will back to loginPage in 3 seconds")
+                    setTimeout(function () {
+                        localStorage.removeItem("token");
+                        localStorage.removeItem("role");
+                        window.location.href = "loginPage.html";
+                    }, 3000);
+                }
+            });
+    });
+</script>
+</html>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Firstwebapp:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dc9d1063-1dc4-4ca0-bd35-3c3669c01b48" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Firstwebapp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_appengine_appengine_api_1_0_sdk_Release.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/Firstwebapp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/ChangePasswordData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/RequestData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/RequestDataUpdate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/RequestUpdate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/ResponseFormat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/UserLeveL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/qqcoisa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/AuthTokenDetail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/OperationPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/changePassword.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/loginPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/registPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/searchUser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/updateOtherPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/webapp/updateSelfPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/project/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/LoginResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/LoginResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/OperationResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/Operation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/AuthToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/AuthToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/LoginData.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/LoginData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/RegisterData.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/RegisterData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/util/UserData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/webapp/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DarkyenusTimeTracker">
+    <option name="totalTimeSeconds" value="56363" />
+    <option name="gitIntegration" value="true" />
+    <option name="naggedAbout" value="1" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ehTujtaVNU0X796iCPsy1RJGlP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ACTIVE_CLOUD_PROJECT_ACCOUNT": "s.chen@campus.fct.unl.pt",
+    "ACTIVE_CLOUD_PROJECT_ID": "apdc-2024-individual-419411",
+    "ACTIVE_CLOUD_PROJECT_NAME": "APDC-2024-Individual",
+    "ACTIVE_CLOUD_PROJECT_NUMBER": "221967528375",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.google.cloudcode.ide_session_index": "20240408_0001",
+    "last_opened_file_path": "C:/Users/csh79/Documents/GitHub/APDC-2024-Individual/project/src/main/webapp",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\csh79\Documents\GitHub\APDC-2024-Individual\project\src\main\webapp" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Google App Engine Deployment.Google App Engine Deployment">
+    <configuration name="Google Cloud Debug" type="GCPDebug" factoryName="GCPDebug" CloudProjectName="apdc-2024-individual-419411" GoogleUsername="s.chen@campus.fct.unl.pt">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="4" requestIdentifier="#4" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="Google App Engine Deployment" type="gcp-app-engine-deploy" factoryName="Google App Engine Deployment" server-name="Google App Engine">
+      <deployment type="maven-build-source" name="Firstwebapp" project="apdc-2024-individual-419411" version="auto">
+        <settings cloudProjectName="apdc-2024-individual-419411" environment="APP_ENGINE_STANDARD" googleUsername="s.chen@campus.fct.unl.pt" promote="true" stagedArtifactName="" stopPreviousVersion="true" userSpecifiedArtifactPath="" version="" />
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/project/pom.xml" goal="package" />
+      </method>
+    </configuration>
+    <configuration default="true" type="gcp-app-engine-local-run" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <server-settings />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="7965" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="localtest" type="gcp-app-engine-local-run" factoryName="Local" APPLICATION_SERVER_NAME="Google App Engine Standard Local Server" ALTERNATIVE_JRE_ENABLED="false">
+      <server-settings>
+        <artifact>Firstwebapp:war exploded</artifact>
+      </server-settings>
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="7965" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Firstwebapp:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Google App Engine Deployment.Google App Engine Deployment" />
+      <item itemvalue="Google App Engine Standard Local Server.localtest" />
+      <item itemvalue="Google Cloud Debugger.Google Cloud Debug" />
+      <item itemvalue="HTTP Request.generated-requests | #4" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #4" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dc9d1063-1dc4-4ca0-bd35-3c3669c01b48" name="Changes" comment="" />
+      <created>1712356034784</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712356034784</updated>
+      <workItem from="1712356036308" duration="103000" />
+      <workItem from="1712396881259" duration="6740000" />
+      <workItem from="1712406504865" duration="527000" />
+      <workItem from="1712408955931" duration="109000" />
+      <workItem from="1712409094699" duration="19492000" />
+      <workItem from="1712493392514" duration="5202000" />
+      <workItem from="1712503291556" duration="21404000" />
+      <workItem from="1712568818568" duration="18167000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/Operation.java</url>
+          <line>198</line>
+          <properties class="pt.unl.fct.di.apdc.firstwebapp.resources.Operation" method="doRegistrationV1">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/Operation.java</url>
+          <line>91</line>
+          <properties class="pt.unl.fct.di.apdc.firstwebapp.resources.Operation" method="doLogout">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/Operation.java</url>
+          <line>163</line>
+          <properties class="pt.unl.fct.di.apdc.firstwebapp.resources.Operation" method="doSelfUpdate">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/project/src/main/webapp/updateSelfPage.html</url>
+          <line>40</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/project/src/main/java/pt/unl/fct/di/apdc/firstwebapp/resources/Operation.java</url>
+          <line>133</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

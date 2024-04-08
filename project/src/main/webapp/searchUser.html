@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>ListUser Page</h1>
+
+<form id="ListUserForm" action="/rest/ops/List" method="post">
+    <p><input type="submit" value="Search"/>
+    <p>
+        <button id="back">back</button>
+    </p>
+</form>
+<div id="ListUserTable">
+
+</div>
+</body>
+<script>
+    document.getElementById("back").addEventListener("click", function (e) {
+        e.preventDefault();
+        window.location.href = "OperationPage.html";
+    })
+    document.getElementById("ListUserForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        var formData = {
+            operation: 5,
+            input: {},
+            token: JSON.parse(localStorage.getItem("token")),
+            output: 200
+        };
+        fetch("/rest/ops/List", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        }).then(response => {
+            console.log(response.json())
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+            .then(data => {//data = user data
+                data.forEach(user => {
+                    var tr = document.createElement("tr");
+                    var tdUsername = document.createElement("td");
+                    var tdName = document.createElement("td");
+                    var tdEmail = document.createElement("td");
+                    tdUsername.innerText = user.username;
+                    tdName.innerText = user.name;
+                    tdEmail.innerText = user.email;
+                    tr.appendChild(tdUsername);
+                    tr.appendChild(tdName);
+                    tr.appendChild(tdEmail);
+                    if (localStorage.getItem("role") !== "1") {
+                        var tdPwd = document.createElement("td");
+                        var tdJob = document.createElement("td");
+                        var tdPhone = document.createElement("td");
+                        var tdWorkPlace = document.createElement("td");
+                        var tdPostCode = document.createElement("td");
+                        var tdNif = document.createElement("td");
+                        var tdPrivacy = document.createElement("td");
+                        var tdState = document.createElement("td");
+                        var tdRole = document.createElement("td");
+                        tdPwd.innerText = user.password;
+                        tdJob.innerText = user.job;
+                        tdPhone.innerText = user.telephone;
+                        tdWorkPlace.innerText = user.workplace;
+                        tdPostCode.innerText = user.postCode;
+                        tdNif.innerText = user.nif;
+                        tdPrivacy.innerText = user.privacy;
+                        tdState.innerText = user.state;
+                        tdRole.innerText = user.role;
+                        tr.appendChild(tdPwd);
+                        tr.appendChild(tdJob);
+                        tr.appendChild(tdPhone);
+                        tr.appendChild(tdWorkPlace);
+                        tr.appendChild(tdPostCode);
+                        tr.appendChild(tdNif);
+                        tr.appendChild(tdPrivacy);
+                        tr.appendChild(tdState);
+                        tr.appendChild(tdRole);
+                    }
+                    document.getElementById("ListUserTable").appendChild(tr);
+                })
+            }).catch(error => {
+            if (error.status === 403) {
+                alert("Password is incorrect");
+            } else if (error.status === 401) {
+                alert("Authentication failed, will back to loginPage in 3 seconds")
+                setTimeout(function () {
+                    window.location.href = "loginPage.html";
+                }, 3000);
+            }
+        });
+    });
+</script>
+</html>

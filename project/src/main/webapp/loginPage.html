@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color: bisque">
+<form id="loginForm" style="position: absolute; top: 10%; left: 40%;
+    margin: 50px auto; padding: 3%;background-color: antiquewhite;border: 2px solid black; border-radius: 20px">
+    <h1>LoginPage</h1>
+
+    <p><label for="userName">UserName:</label>
+        <input type="text" id="userName" name="userName" value="" />
+    <p><label for="password">Password:</label>
+        <input type="password" id="password" name="password" value="" />
+    <p><input type="submit" value="Login" />
+    <p><button id="back">back</button></p>
+</form>
+<div id="errorMessage" style="color: red; margin-top: 10px; position: absolute; top: 80%; left: 40%"></div>
+</body>
+
+<script>
+    document.getElementById("back").addEventListener("click", function(e){
+        window.location.href = "index.html";
+    })
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        if(document.getElementById("userName").value.trim() === ""
+            &&document.getElementById("password").trim() === ""){
+            alert("Empty password or Username");
+            return ;
+        }
+        var formData = {
+            username: document.getElementById("userName").value,
+            password: document.getElementById("password").value,
+        };
+        fetch("/rest/login/log", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Login successful:", data);
+                localStorage.setItem("token", JSON.stringify(data));
+                localStorage.setItem("role", data.role)
+                alert("Success, will back to home in 3 seconds")
+                setTimeout(function () {
+                    window.location.href = "OperationPage.html";
+                }, 1000);
+            })
+            .catch(error => {
+                if(error.code === 403)
+                    if(error.message === "Account Inactive") {
+                        alert("Your account is not active, please contact the administrator")
+                        window.refresh();
+                    }
+                    else
+                console.error("Error during login:", error);
+            });
+    });
+</script>
+</html>

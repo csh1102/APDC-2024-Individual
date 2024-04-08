@@ -1,25 +1,45 @@
 package pt.unl.fct.di.apdc.firstwebapp.util;
 
 import com.google.appengine.api.datastore.Email;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class RegisterData{
+public class RegisterData {
+    @JsonProperty("username")
     public String username;
-    public String name;
+
+    @JsonProperty("password")
     public String password;
+
+    @JsonProperty("name")
+    public String name;
+
+    @JsonProperty("email")
     public String email;
+
+    @JsonProperty("job")
+    public String job;
+
+    @JsonProperty("nif")
+    public String nif;
+
+    @JsonProperty("postCode")
+    public String postcode;
+
+    @JsonProperty("telephone")
     public String telephone;
-    public RegisterData(){}
-    public RegisterData(String username,String name, String password, String email,String telephone){
-        this.username = username;
-        this.name=name;
-        this.password = password;
-        this.email = email;
-        this.telephone = telephone;
-    }
-    public boolean validRegistration(){
-        return !username.trim().equals("")
-                &&!name.trim().equalsIgnoreCase("")
-                &&!password.trim().equalsIgnoreCase("")
-                &&!telephone.trim().equalsIgnoreCase("");
+
+    @JsonProperty("workplace")
+    public String workplace;
+
+    @JsonProperty("privacy")
+    public boolean privacy;
+
+    @JsonProperty("state")
+    public boolean state;
+
+    public boolean validRegistration() {
+        return username != null && !username.isEmpty() &&
+                password != null && !password.isEmpty() &&
+                email != null && !email.isEmpty();
     }
 }

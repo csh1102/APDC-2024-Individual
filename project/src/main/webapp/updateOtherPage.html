@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Update your Profile</h1>
+<p>If you don't want to change an attribute, just leave it blank.</p>
+<form id="updateForm" action="/rest/ops/update" method="post">
+    <p><label for="Name">Name:</label>
+        <input type="text" id="Name" name="Name" value=""/>
+    <p><label for="telephone">Telephone:</label>
+        <input type="text" id="telephone" name="telephone" value=""/>
+    <p><label for="nif">nif:</label>
+        <input type="text" id="nif" name="nif" value=""/>
+    <p><label for="post-code">post-code:</label>
+        <input type="text" id="post-code" name="post-code" value=""/>
+    <p><label for="job">job: </label>
+        <input type="text" id="job" name="job" value="">
+    <p><label for="workplace">workplace: </label>
+        <input type="text" id="workplace" name="workplace" value="">
+    <p><label for="privacy">privacy :</label>
+        <input type="checkbox" id="privacy" name="privacy">
+        <label for="state">state :</label>
+        <input type="checkbox" id="state" name="state">
+    <p><input type="submit" value="Confirm"/>
+
+    <p>
+        <button id="back">back</button>
+</form>
+
+</body>
+<script>
+    document.getElementById("back").addEventListener("click", function (e) {
+        e.preventDefault();
+        window.location.href = "index.html";
+    })
+    document.getElementById("updateForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        var formData = {
+            operation: 6,
+            input: {
+                name: document.getElementById("Name").value,
+                telephone: document.getElementById("telephone").value,
+                nif: document.getElementById("nif").value,
+                postCode: document.getElementById("post-code").value,
+                job: document.getElementById("job").value,
+                workplace: document.getElementById("workplace").value,
+                privacy: !!document.getElementById("privacy").checked,
+                state: !!document.getElementById("state").checked
+            },
+            token: JSON.parse(localStorage.getItem("token")),
+            output: 200
+        };
+        fetch("/rest/ops/update", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                var data = response.json();
+                console.log("Change with success:", data);
+                alert("Success, will back to home in 3 seconds")
+                setTimeout(function () {
+                    window.location.href = "OperationPage.html";
+                }, 3000);
+                return response.json();
+            }).catch(error => {
+            if (error.code === 403) {
+                alert("You are not allowed to");
+            } else if (error.code === 401) {
+                alert("Authentication failed, will back to loginPage in 3 seconds")
+                localStorage.clear();
+                setTimeout(function () {
+                    window.location.href = "loginPage.html";
+                }, 3000);
+            }
+        });
+    })
+</script>
+</html>

@@ -19,6 +19,7 @@ import com.google.appengine.repackaged.org.apache.commons.codec.digest.DigestUti
 import com.google.cloud.Timestamp;
 import com.google.cloud.datastore.*;
 import com.google.cloud.datastore.KeyFactory;
+import org.apache.commons.logging.Log;
 import pt.unl.fct.di.apdc.firstwebapp.util.AuthToken;
 import pt.unl.fct.di.apdc.firstwebapp.util.LoginData;
 import pt.unl.fct.di.apdc.firstwebapp.Authentication.SignatureUtils;
@@ -47,27 +48,33 @@ public class LoginResource {
 	}
 
 	@POST
-	@Path("/")
+	@Path("/log")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response doLogin(LoginData data) {
 		LOG.fine("Login attempt by user: " + data.username);
-		Key userKey = userKeyFactory.newKey(data.username);
+		Key userKey = userKeyFactory.setKind("User").newKey(data.username);
 		Entity user = datastore.get(userKey);
 		if (user != null) {
-			String hashedPWD = (String) user.getString("user_pwd");
+			String hashedPWD = user.getString("user_pwd");
 			if (hashedPWD.equals(DigestUtils.sha512Hex(data.password))) {
-				user = Entity.newBuilder(userKey)
+				user = Entity.newBuilder(user)
 						.set("user_login_time", Timestamp.now())
 						.build();
 				datastore.update(user);
 				LOG.info("User '" + data.username + "' logged in successfully.");
-				AuthToken authToken = new AuthToken(data.username);
+				AuthToken authToken = new AuthToken(data.username,user.getLong("user_level"));
+				Key authTokenKey = userKeyFactory.setKind("AuthToken").newKey(authToken.tokenID);
+				Entity authTokenEntity = Entity.newBuilder(authTokenKey)
+						.set("auth_createDate", authToken.createDate)
+						.set("auth_expirationDate", authToken.expirationDate)
+						.build();
+				datastore.put(authTokenEntity);
 				return Response.ok(g.toJson(authToken)).build();
 			} else {
-				return Response.status(Status.FORBIDDEN).build();
+				return Response.status(Status.FORBIDDEN).entity("Wrong password.").build();
 			}
 		} else {
-			return Response.status(Status.FORBIDDEN).build();
+			return Response.status(Status.FORBIDDEN).entity("User didnt exist.").build();
 		}
 	}
 //
